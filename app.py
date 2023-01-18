@@ -14,6 +14,8 @@ def index():
 def test():
     output = request.get_json()
     print(output) # This is the output that was stored in the JSON within the browser
+    with open("example.txt", "w") as f:
+        f.write(output)
     print(type(output))
     result = json.loads(output) #this converts the json output to a python dictionary
     print(result) # Printing the new dictionary
